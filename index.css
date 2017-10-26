@@ -18,6 +18,10 @@ main {
   height: 50%;
 }
 
+.CodeMirror-placeholder {
+  opacity: .25;
+}
+
 .input__forms,
 .result {
   width: 50%;

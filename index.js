@@ -18,7 +18,6 @@ var styleEditor = CodeMirror.fromTextArea(styleTextarea, {
   mode: "css",
   extraKeys: {Tab: betterTab},
   theme: "monokai",
-  gutters: ["css"],
 });
 styleEditor.on("change", function(cm) {
   document.preview.document.head.querySelector("style").innerHTML = cm.getValue();
