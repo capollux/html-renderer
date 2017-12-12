@@ -1,10 +1,10 @@
-var defaultHTML = '<html><head><style type="text/css"><\/style><\/head><body><\/body><\/html>';
 var previewDocument;
-function init() {
+var previewDefaultHTML = '<html><head><style type="text/css"><\/style><\/head><body><\/body><\/html>';
+document.addEventListener("DOMContentLoaded", function() {
   previewDocument = document.getElementById('preview').contentWindow.document;
-  previewDocument.write(defaultHTML);            
+  previewDocument.write(previewDefaultHTML);            
   previewDocument.close();            
-}
+});
 // Tab to 2 spaces
 function betterTab(cm) {
   if (cm.somethingSelected()) {
