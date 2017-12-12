@@ -1,7 +1,7 @@
 var defaultHTML = '<html><head><style type="text/css"><\/style><\/head><body><\/body><\/html>';
 function init() {
-  document.preview.document.write(defaultHTML);            
-  document.preview.document.close();            
+  document.getElementById('preview').contentWindow.document.write(defaultHTML);            
+  document.getElementById('preview').contentWindow.document.close();            
 }
 // Tab to 2 spaces
 function betterTab(cm) {
@@ -20,7 +20,7 @@ var styleEditor = CodeMirror.fromTextArea(styleTextarea, {
   theme: "monokai",
 });
 styleEditor.on("change", function(cm) {
-  document.preview.document.head.querySelector("style").innerHTML = cm.getValue();
+  document.getElementById('preview').contentWindow.document.head.querySelector("style").innerHTML = cm.getValue();
 });
 bodyTextarea = document.querySelector("#body");
 var bodyEditor = CodeMirror.fromTextArea(bodyTextarea, {
@@ -31,5 +31,5 @@ var bodyEditor = CodeMirror.fromTextArea(bodyTextarea, {
   theme: "monokai",
 });
 bodyEditor.on("change", function(cm) {
-  document.preview.document.body.innerHTML = cm.getValue();
+  document.getElementById('preview').contentWindow.document.body.innerHTML = cm.getValue();
 });
